@@ -1,6 +1,27 @@
 # Timeline, meetings and other important notes
 
 * [14th September 2024](#14th-september-2024)
+* [15th October 2024](#15th-october-2024)
+
+### 17th October 2024
+
+## Trying to run project...
+- Cannot install directly from requirements.txt. Fails because of distutils not being supported. Installing newer versions manually and hoping for the best. 
+- Cannot access linked version of neuralcoref, so will try to use [huggingface/neuralcoref](https://github.com/huggingface/neuralcoref) and hope for the best.
+- Library jiant hasn't been supported for several years and is being a royal pain due to outdated requirements. Tried manually installing from source code and forcing the requirements, with partial success. Going to change code to avoid using this and will come up with some other workaround if/when this proves impossible.
+- paths set to 'QA_SKILLS_HOME' causing crashing, replacing with 'PWD' to resolve.
+- Other small changes due to updates to libraries.
+
+- datasetprocessors/run.py is running...
+
+
+### 15th October 2024
+
+## Plan settled
+*Present: Anna and Chrisanna*
+- Start with replicating Anna's paper, using gen model OLMo
+- Extend after, if successful
+- Don't cry.
 
 ### 14th September 2024
 
