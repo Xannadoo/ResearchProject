@@ -2,6 +2,16 @@
 
 * [14th September 2024](#14th-september-2024)
 * [15th October 2024](#15th-october-2024)
+* [17th October 2024](#17th-october-2024)
+* [19th October 2024](#19th-october-2024)
+
+### 19th October 2024
+
+## New tactic
+- as it's failing again after I ran out of harddrive space. Gonna have to use the hpc at some point and that means recreating the environment anyway.
+- Python 3.9 seems to work best, pip 23.3.2. Need to use a later version of smart-open as it cannot install the one from the requirements.txt, and have to use a newer version of pathy to support that.
+- I have access to the hpc, but my access rights seem to be messed up, and I can't actually submit a job. Nothing is ever easy.
+
 
 ### 17th October 2024
 
