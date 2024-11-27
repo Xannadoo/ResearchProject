@@ -1,0 +1,30 @@
+model: 
+  type: olmo
+  size: 1b
+
+load_path: "allenai/OLMo-7B-Instruct-hf"
+reset_trainer_state: true
+
+data:
+  paths:
+    - "train_token_ids.npy"
+  label_mask_paths:
+    - "train_labels.npy"
+
+  validation:
+    paths:
+      - "val_token_ids.npy"
+    label_mask_paths:
+      - "val_labels.npy"
+
+training:
+  batch_size: 16
+  learning_rate: 5e-5
+  num_train_steps: 10000
+  validation_interval: 1000
+
+evaluators:
+  in_loop:
+    - validation_loss
+  final:
+    - validation_loss
