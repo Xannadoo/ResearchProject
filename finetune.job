@@ -1,23 +1,21 @@
 #!/bin/bash
 #SBATCH --job-name=olmo_finetune
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
-#SBATCH --time=24:00:00
-#SBATCH --partition=acltr
-#SBATCH --gres=gpu:A100:4            
+#SBATCH --output=ResearchProject/logs/%x_%j.out
+#SBATCH --time=00:10:00
+#SBATCH --partition=scavenge
 #SBATCH --cpus-per-task=16
-
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:2
+#SBATCH --nodelist=cn11,cn19,cn13,cn[3,6]
 
 hostname
 
-# Load modules
 module load Anaconda3/2024.02-1
 
-# Activate the conda environment
-source activate captum_test
+eval "$(conda shell.bash hook)"
 
-# Change to the directory containing your training script
-cd /ResearchProject
+conda activate captum_test
 
-# Run the torchrun command for distributed training
-torchrun --nproc_per_node=4 train.py --config training.yaml --dry-run
+cd ResearchProject
+
+torchrun --nproc_per_node=2 train.py --dry-run

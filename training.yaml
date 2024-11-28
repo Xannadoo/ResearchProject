@@ -7,15 +7,15 @@ reset_trainer_state: true
 
 data:
   paths:
-    - "train_token_ids.npy"
+    - "ResearchProject/train_token_ids.npy"
   label_mask_paths:
-    - "train_labels.npy"
+    - "Research/Project/train_labels.npy"
 
   validation:
     paths:
-      - "val_token_ids.npy"
+      - "ResearchProject/val_token_ids.npy"
     label_mask_paths:
-      - "val_labels.npy"
+      - "ResearchProject/val_labels.npy"
 
 training:
   batch_size: 16
