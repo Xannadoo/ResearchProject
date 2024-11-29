@@ -1,9 +1,24 @@
-model: 
-  type: olmo
-  size: 1b
+model:
+  type: OLMoForCausalLM
+  parameters:
+    pretrained_model_name_or_path: allenai/OLMo-7B-0724-Instruct-hf
+    gradient_checkpointing: true
+    use_cache: false
 
-load_path: "allenai/OLMo-7B-Instruct-hf"
-reset_trainer_state: true
+training:
+  optimizer:
+    type: AdamW
+    parameters:
+      lr: 5e-5
+      weight_decay: 0.01
+  scheduler:
+    type: linear
+    parameters:
+      warmup_steps: 1000
+  batch_size: 8
+  max_steps: 2000
+  gradient_accumulation_steps: 8
+  mixed_precision: fp16
 
 data:
   paths:
@@ -16,15 +31,3 @@ data:
       - "ResearchProject/val_token_ids.npy"
     label_mask_paths:
       - "ResearchProject/val_labels.npy"
-
-training:
-  batch_size: 16
-  learning_rate: 5e-5
-  num_train_steps: 10000
-  validation_interval: 1000
-
-evaluators:
-  in_loop:
-    - validation_loss
-  final:
-    - validation_loss
