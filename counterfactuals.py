@@ -29,6 +29,7 @@ def load_model(model_name):
 
 
 olmo, tokenizer = load_model(model)
+print('model loaded')
 
 chat = [
     {"role": "system", "content": "You are a helpful bot that uses the provided context to answer questions. You do not answer with any other tokens but the answer entity."},
@@ -40,7 +41,11 @@ tokenizer.chat_template =  ''
 
 tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=False)
 
+print('chat template applied')
+
 prompts = [json.loads(x) for x in open('train_comp.json').read().split('\n')][0]
+
+print('dataset loaded')
 
 def get_responses(data):
     prompt = data['prompt_o']
@@ -60,8 +65,16 @@ def get_responses(data):
     output = tokenizer.batch_decode(response, skip_special_tokens=True)[0].split('\n')[0]
     output2 = tokenizer.batch_decode(response2, skip_special_tokens=True)[0].split('\n')[0]
     
-    out = re.findall(r'(?<=Answer: ).*', output)[0]
-    out2 = re.findall(r'(?<=Answer: ).*', output2)[0]
+    out = re.findall(r'(?<=Answer: ).*', output)
+    if len(out)>0:
+        out = out[0]
+    else:
+        print(out)
+    out2 = re.findall(r'(?<=Answer: ).*', output2)
+    if len(out2)>0:
+        out2 = out2[0]
+    else:
+        print(out2)
 
     #check if gold is in output:
     gold_present = False
@@ -108,4 +121,4 @@ with open(f'{chosen_model}_counterfactuals.json', 'w') as fp:
                                  'wrong2_present': wrong2_present,
                                  'out': out,
                                  'out2':out2}}))
-        
+print('done!')        

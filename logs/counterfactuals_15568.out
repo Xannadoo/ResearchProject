@@ -1,0 +1,52 @@
+cn19.hpc.itu.dk
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:56<01:53, 56.58s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:39<00:48, 48.83s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:40<00:00, 26.99s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:40<00:00, 33.66s/it]
+******************************
+Output: Allen Holden ( 18 April 1911 ) was born
+True:  Allen Holden
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Ainhoa Artolazábal
+True:  Ainhoa Artolazábal
+gold in output: True, 
+wrong in output: False
+******************************
+******************************
+Output: Gerd Cintl
+True:  Gerd Cintl
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Léa Drucker.
+True:  Léa Drucker
+gold in output: True, 
+wrong in output: False
+******************************
+******************************
+Output: Clark Kerr ( May 17, 1911 – December 1
+True:  Clark Kerr
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Clark Kerr (May 17, 1911 – December 1
+True:  François Barrer
+gold in output: False, 
+wrong in output: True
+******************************
+******************************
+Output: The World's Greatest Athlete was released first
+True:  The World's Greatest Athlete
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Invincible. Invincible was released in
+True:  Invincible
+gold in output: True, 
+wrong in output: False
+******************************
+Traceback (most recent call last):
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 104, in <module>
+    out,gold_present,wrong_present,out2,gold2_present,wrong2_present = get_responses(v)
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 63, in get_responses
+    out = re.findall(r'(?<=Answer: ).*', output)[0]
+IndexError: list index out of range
