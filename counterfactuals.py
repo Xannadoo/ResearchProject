@@ -14,16 +14,8 @@ warnings.filterwarnings("ignore", ".*Skipping this token.*")
 torch.manual_seed(23)
 
 def load_model(model_name):
-    n_gpus = torch.cuda.device_count()
-    max_memory = "10000MB"
-
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        device_map="auto",  # dispatch efficiently the model on the available ressources
-        max_memory = {i: max_memory for i in range(n_gpus)},
-    )
+    model = AutoModelForCausalLM.from_pretrained(model_name)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
-
     return model, tokenizer
 
 #olmo, tokenizer = load_model("allenai/OLMo-1B-hf") #little model, runs on laptop
