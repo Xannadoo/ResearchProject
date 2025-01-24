@@ -7,6 +7,14 @@ import re
 import spacy
 nlp = spacy.load('en_core_web_sm')
 
+chosen_model = 'large' #'small' #or 'large'
+
+if chosen_model == 'small':
+
+    model = "allenai/OLMo-1B-hf" #little model, runs on laptop
+else:
+    model = "allenai/OLMo-7B-0724-Instruct-hf" #large model, runs on HPC
+
 import warnings
 # Ignore warnings due to transformers library
 warnings.filterwarnings("ignore", ".*past_key_values.*")
@@ -19,8 +27,9 @@ def load_model(model_name):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     return model, tokenizer
 
-olmo, tokenizer = load_model("allenai/OLMo-1B-hf") #little model, runs on laptop
-#olmo, tokenizer = load_model("allenai/OLMo-7B-0724-Instruct-hf")  #Instruct model, need HPC
+
+olmo, tokenizer = load_model(model)
+
 chat = [
     {"role": "system", "content": "You are a helpful bot that uses the provided context to answer questions. You do not answer with any other tokens but the answer entity."},
     {"role": "user", "content": "Context: Ainhoa Artolazábal Royo( born 6 March 1972) is a road cyclist from Spain. She represented her nation at the 1992 Summer Olympics in the women's road race. Allen Holden( 18 April 1911 – 12 December 1980) was a New Zealand cricketer. He played two first- class matches for Otago between 1937 and 1940. Question: Who was born earlier, Allen Holden or Ainhoa Artolazábal?"},
@@ -87,12 +96,12 @@ def get_responses(data):
     return out,gold_present,wrong_present,out2,gold2_present,wrong2_present
 
 c = 0
-with open('little_model_counterfactuals.json', 'w') as fp:
+with open(f'{chosen_model}_counterfactuals.json', 'w') as fp:
     for k, v in prompts.items():
-        print(v['prompt_o'])
-        print(v['gold_o'])
-        print(v['prompt_s'])
-        print(v['gold_s'])
+        #print(v['prompt_o'])
+        #print(v['gold_o'])
+        #print(v['prompt_s'])
+        #print(v['gold_s'])
         out,gold_present,wrong_present,out2,gold2_present,wrong2_present = get_responses(v)
         fp.write(json.dumps({k: {'gold_present': gold_present, 
                                  'wrong_present': wrong_present, 
