@@ -20,6 +20,15 @@ def load_model(model_name):
 
 #olmo, tokenizer = load_model("allenai/OLMo-1B-hf") #little model, runs on laptop
 olmo, tokenizer = load_model("allenai/OLMo-7B-0724-Instruct-hf")  #Instruct model, need HPC
+chat = [
+    {"role": "system", "content": "You are a helpful bot that uses the provided context to answer questions. You do not answer with any other tokens but the answer entity."},
+    {"role": "user", "content": "Context: Ainhoa Artolazábal Royo( born 6 March 1972) is a road cyclist from Spain. She represented her nation at the 1992 Summer Olympics in the women's road race. Allen Holden( 18 April 1911 – 12 December 1980) was a New Zealand cricketer. He played two first- class matches for Otago between 1937 and 1940. Question: Who was born earlier, Allen Holden or Ainhoa Artolazábal?"},
+    {"role": "assistant", "content": "Allen Holden"}
+]
+
+tokenizer.chat_template =  ''
+
+print(tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=False))
 
 prompts = [json.loads(x) for x in open('train_comp.json').read().split('\n')][0]
 
@@ -40,7 +49,10 @@ def get_responses(data):
 
     output = tokenizer.batch_decode(response, skip_special_tokens=True)[0].split('\n')[0]
     output2 = tokenizer.batch_decode(response2, skip_special_tokens=True)[0].split('\n')[0]
-
+    print('_'*30)
+    print(output)
+    print(output2)
+    print('_'*30)
     out = output[len(prompt):]
     out2 = output2[len(prompt2):]
 
