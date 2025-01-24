@@ -1,6 +1,4 @@
 model:
-  type: OLMoForCausalLM
-  parameters:
     pretrained_model_name_or_path: allenai/OLMo-7B-0724-Instruct-hf
     gradient_checkpointing: true
     use_cache: false

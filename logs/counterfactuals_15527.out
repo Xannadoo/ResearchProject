@@ -1,0 +1,22 @@
+cn3.hpc.itu.dk
+Could not load bitsandbytes native library: /home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/torch/lib/../../../../libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so)
+Traceback (most recent call last):
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/bitsandbytes/cextension.py", line 85, in <module>
+    lib = get_native_library()
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/bitsandbytes/cextension.py", line 72, in get_native_library
+    dll = ct.cdll.LoadLibrary(str(binary_path))
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/ctypes/__init__.py", line 452, in LoadLibrary
+    return self._dlltype(name)
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/ctypes/__init__.py", line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/torch/lib/../../../../libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so)
+Traceback (most recent call last):
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 44, in <module>
+    olmo, tokenizer = load_model("allenai/OLMo-1B-hf", bnb_config)
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 23, in load_model
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3577, in from_pretrained
+    raise ImportError(
+ImportError: Using `low_cpu_mem_usage=True` or a `device_map` requires Accelerate: `pip install 'accelerate>=0.26.0'`

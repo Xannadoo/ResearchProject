@@ -1,0 +1,11 @@
+cn3.hpc.itu.dk
+Traceback (most recent call last):
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 30, in <module>
+    olmo, tokenizer = load_model("allenai/OLMo-7B-0724-Instruct-hf")  #Instruct model, need HPC
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 20, in load_model
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3577, in from_pretrained
+    raise ImportError(
+ImportError: Using `low_cpu_mem_usage=True` or a `device_map` requires Accelerate: `pip install 'accelerate>=0.26.0'`

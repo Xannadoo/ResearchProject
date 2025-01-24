@@ -1,0 +1,14 @@
+cn3.hpc.itu.dk
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 99078.05it/s]
+Traceback (most recent call last):
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 30, in <module>
+    olmo, tokenizer = load_model("allenai/OLMo-7B-0724-Instruct-hf")  #Instruct model, need HPC
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 20, in load_model
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4303, in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+  File "/home/ccor/.conda/envs/qas310/lib/python3.10/site-packages/accelerate/big_modeling.py", line 498, in dispatch_model
+    raise ValueError(
+ValueError: You are trying to offload the whole model to the disk. Please use the `disk_offload` function instead.
