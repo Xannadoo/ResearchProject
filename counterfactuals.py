@@ -95,7 +95,6 @@ def get_responses(data):
     print('*'*30)
     return out,gold_present,wrong_present,out2,gold2_present,wrong2_present
 
-c = 0
 with open(f'{chosen_model}_counterfactuals.json', 'w') as fp:
     for k, v in prompts.items():
         #print(v['prompt_o'])
@@ -109,7 +108,4 @@ with open(f'{chosen_model}_counterfactuals.json', 'w') as fp:
                                  'wrong2_present': wrong2_present,
                                  'out': out,
                                  'out2':out2}}))
-        c+=1
-        if c > 10:
-            break
         
