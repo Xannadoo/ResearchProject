@@ -2,9 +2,6 @@ import json
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from classes import QCA
-import random
-
-import bitsandbytes as bnb
 
 import spacy
 nlp = spacy.load('en_core_web_sm')
@@ -16,13 +13,12 @@ warnings.filterwarnings("ignore", ".*Skipping this token.*")
 
 torch.manual_seed(23)
 
-def load_model(model_name, bnb_config):
+def load_model(model_name):
     n_gpus = torch.cuda.device_count()
     max_memory = "10000MB"
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        quantization_config=bnb_config,
         device_map="auto",  # dispatch efficiently the model on the available ressources
         max_memory = {i: max_memory for i in range(n_gpus)},
     )
@@ -30,18 +26,8 @@ def load_model(model_name, bnb_config):
 
     return model, tokenizer
 
-def create_bnb_config():
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-    )
-
-    return bnb_config
-
-bnb_config = create_bnb_config()
-olmo, tokenizer = load_model("allenai/OLMo-1B-hf", bnb_config)
+#olmo, tokenizer = load_model("allenai/OLMo-1B-hf") #little model, runs on laptop
+olmo, tokenizer = load_model("allenai/OLMo-7B-0724-Instruct-hf")  #Instruct model, need HPC
 
 prompts = [json.loads(x) for x in open('train_comp.json').read().split('\n')][0]
 
