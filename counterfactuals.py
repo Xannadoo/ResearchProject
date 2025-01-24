@@ -2,6 +2,7 @@ import json
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from classes import QCA
+import re
 
 import spacy
 nlp = spacy.load('en_core_web_sm')
@@ -18,8 +19,8 @@ def load_model(model_name):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     return model, tokenizer
 
-#olmo, tokenizer = load_model("allenai/OLMo-1B-hf") #little model, runs on laptop
-olmo, tokenizer = load_model("allenai/OLMo-7B-0724-Instruct-hf")  #Instruct model, need HPC
+olmo, tokenizer = load_model("allenai/OLMo-1B-hf") #little model, runs on laptop
+#olmo, tokenizer = load_model("allenai/OLMo-7B-0724-Instruct-hf")  #Instruct model, need HPC
 chat = [
     {"role": "system", "content": "You are a helpful bot that uses the provided context to answer questions. You do not answer with any other tokens but the answer entity."},
     {"role": "user", "content": "Context: Ainhoa Artolazábal Royo( born 6 March 1972) is a road cyclist from Spain. She represented her nation at the 1992 Summer Olympics in the women's road race. Allen Holden( 18 April 1911 – 12 December 1980) was a New Zealand cricketer. He played two first- class matches for Otago between 1937 and 1940. Question: Who was born earlier, Allen Holden or Ainhoa Artolazábal?"},
@@ -28,7 +29,7 @@ chat = [
 
 tokenizer.chat_template =  ''
 
-print(tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=False))
+tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=False)
 
 prompts = [json.loads(x) for x in open('train_comp.json').read().split('\n')][0]
 
@@ -49,12 +50,9 @@ def get_responses(data):
 
     output = tokenizer.batch_decode(response, skip_special_tokens=True)[0].split('\n')[0]
     output2 = tokenizer.batch_decode(response2, skip_special_tokens=True)[0].split('\n')[0]
-    print('_'*30)
-    print(output)
-    print(output2)
-    print('_'*30)
-    out = output[len(prompt):]
-    out2 = output2[len(prompt2):]
+    
+    out = re.findall(r'(?<=Answer: ).*', output)[0]
+    out2 = re.findall(r'(?<=Answer: ).*', output2)[0]
 
     #check if gold is in output:
     gold_present = False
