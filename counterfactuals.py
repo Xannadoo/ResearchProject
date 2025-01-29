@@ -27,7 +27,7 @@ def load_model(model_name):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     return model, tokenizer
 
-
+print('loading model')
 olmo, tokenizer = load_model(model)
 print('model loaded')
 
@@ -108,7 +108,10 @@ def get_responses(data):
     print('*'*30)
     return out,gold_present,wrong_present,out2,gold2_present,wrong2_present
 
-with open(f'{chosen_model}_counterfactuals.json', 'w') as fp:
+
+c=0
+n=1000
+with open(f'{chosen_model}_{n}_counterfactuals.json', 'w') as fp:
     for k, v in prompts.items():
         #print(v['prompt_o'])
         #print(v['gold_o'])
@@ -121,4 +124,8 @@ with open(f'{chosen_model}_counterfactuals.json', 'w') as fp:
                                  'wrong2_present': wrong2_present,
                                  'out': out,
                                  'out2':out2}}))
+
+        c+=1
+        if c > n:
+            break
 print('done!')        
