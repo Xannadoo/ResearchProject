@@ -1,20 +1,10 @@
 import json
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from classes import QCA
 import re
-
 import spacy
 nlp = spacy.load('en_core_web_sm')
-
-chosen_model = 'large' #'small' #or 'large'
-
-if chosen_model == 'small':
-
-    model = "allenai/OLMo-1B-hf" #little model, runs on laptop
-else:
-    model = "allenai/OLMo-7B-0724-Instruct-hf" #large model, runs on HPC
-
 import warnings
 # Ignore warnings due to transformers library
 warnings.filterwarnings("ignore", ".*past_key_values.*")
@@ -23,13 +13,29 @@ warnings.filterwarnings("ignore", ".*Skipping this token.*")
 torch.manual_seed(23)
 
 def load_model(model_name):
-    model = AutoModelForCausalLM.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    print('load model internal')
+    try:
+        model = AutoModelForCausalLM.from_pretrained(model_name)
+    except Exception as e:
+        print(e)
+    print('model loaded, loading tokeniser')
+    try:
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+    except Exception as f:
+        print(f)
+    print('tokeniser loaded')
     return model, tokenizer
 
+chosen_model = 'small' #'small' #or 'large'
+
+if chosen_model == 'small':
+    model = "allenai/OLMo-1B-hf" #little model, runs on laptop
+else:
+    model = "allenai/OLMo-7B-0724-Instruct-hf" #large model, runs on HPC
+
 print('loading model')
-olmo, tokenizer = load_model(model)
-print('model loaded')
+olmo, tokenizer = load_model(model) #fails to load here for larger n
+print('model ready for set up')
 
 chat = [
     {"role": "system", "content": "You are a helpful bot that uses the provided context to answer questions. You do not answer with any other tokens but the answer entity."},
@@ -40,11 +46,10 @@ chat = [
 tokenizer.chat_template =  ''
 
 tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=False)
-
 print('chat template applied')
 
+print('model ready to fly, loading dataset')
 prompts = [json.loads(x) for x in open('train_comp.json').read().split('\n')][0]
-
 print('dataset loaded')
 
 def get_responses(data):
@@ -57,14 +62,14 @@ def get_responses(data):
     inputs = tokenizer(prompt, return_tensors='pt', return_token_type_ids=False)
     inputs.to(olmo.device)
     response = olmo.generate(**inputs, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
-    
+
     inputs2 = tokenizer(prompt2, return_tensors='pt', return_token_type_ids=False)
     inputs2.to(olmo.device)
     response2 = olmo.generate(**inputs2, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
 
     output = tokenizer.batch_decode(response, skip_special_tokens=True)[0].split('\n')[0]
     output2 = tokenizer.batch_decode(response2, skip_special_tokens=True)[0].split('\n')[0]
-    
+
     out = re.findall(r'(?<=Answer: ).*', output)
     if len(out)>0:
         out = out[0]
@@ -94,7 +99,7 @@ def get_responses(data):
     for i in A2.split():
         if i in out2:
             gold2_present = True
-    
+
     #also check if the wrong answer is present:
     wrong2_present = False
     for i in A.split():
@@ -106,26 +111,22 @@ def get_responses(data):
     print('*'*30)
     print(f'Output: {out2}\nTrue: {A2}\ngold in output: {gold2_present}, \nwrong in output: {wrong2_present}')
     print('*'*30)
+    print()
     return out,gold_present,wrong_present,out2,gold2_present,wrong2_present
 
-
 c=0
-n=1000
+n=10000
 with open(f'{chosen_model}_{n}_counterfactuals.json', 'w') as fp:
     for k, v in prompts.items():
-        #print(v['prompt_o'])
-        #print(v['gold_o'])
-        #print(v['prompt_s'])
-        #print(v['gold_s'])
+        print(c)
         out,gold_present,wrong_present,out2,gold2_present,wrong2_present = get_responses(v)
         fp.write(json.dumps({k: {'gold_present': gold_present, 
                                  'wrong_present': wrong_present, 
                                  'gold2_present': gold2_present, 
                                  'wrong2_present': wrong2_present,
                                  'out': out,
-                                 'out2':out2}}))
-
+                                 'out2':out2}})+ '\n')
         c+=1
-        if c > n:
-            break
-print('done!')        
+        #if c > n:
+        #    break
+print('done!')
