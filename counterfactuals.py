@@ -14,19 +14,14 @@ torch.manual_seed(23)
 
 def load_model(model_name):
     print('load model internal')
-    try:
-        model = AutoModelForCausalLM.from_pretrained(model_name)
-    except Exception as e:
-        print(e)
+    model = AutoModelForCausalLM.from_pretrained(model_name)
+    model.to('cuda')
     print('model loaded, loading tokeniser')
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
-    except Exception as f:
-        print(f)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     print('tokeniser loaded')
     return model, tokenizer
 
-chosen_model = 'small' #'small' #or 'large'
+chosen_model = 'small' #'small'or'large'
 
 if chosen_model == 'small':
     model = "allenai/OLMo-1B-hf" #little model, runs on laptop
@@ -34,9 +29,9 @@ else:
     model = "allenai/OLMo-7B-0724-Instruct-hf" #large model, runs on HPC
 
 print('loading model')
-olmo, tokenizer = load_model(model) #fails to load here for larger n
+olmo, tokenizer = load_model(model)
 print('model ready for set up')
-
+print(olmo.device)
 chat = [
     {"role": "system", "content": "You are a helpful bot that uses the provided context to answer questions. You do not answer with any other tokens but the answer entity."},
     {"role": "user", "content": "Context: Ainhoa Artolazábal Royo( born 6 March 1972) is a road cyclist from Spain. She represented her nation at the 1992 Summer Olympics in the women's road race. Allen Holden( 18 April 1911 – 12 December 1980) was a New Zealand cricketer. He played two first- class matches for Otago between 1937 and 1940. Question: Who was born earlier, Allen Holden or Ainhoa Artolazábal?"},
@@ -127,6 +122,6 @@ with open(f'{chosen_model}_{n}_counterfactuals.json', 'w') as fp:
                                  'out': out,
                                  'out2':out2}})+ '\n')
         c+=1
-        #if c > n:
-        #    break
+        if c > n:
+            break
 print('done!')
