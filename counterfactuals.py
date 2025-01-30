@@ -21,7 +21,7 @@ def load_model(model_name):
     print('tokeniser loaded')
     return model, tokenizer
 
-chosen_model = 'small' #'small'or'large'
+chosen_model = 'large' #'small'or'large'
 
 if chosen_model == 'small':
     model = "allenai/OLMo-1B-hf" #little model, runs on laptop
