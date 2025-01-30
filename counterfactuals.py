@@ -33,7 +33,7 @@ olmo, tokenizer = load_model(model)
 print('model ready for set up')
 print(olmo.device)
 chat = [
-    {"role": "system", "content": "You are a helpful bot that uses the provided context to answer questions. You do not answer with any other tokens but the answer entity."},
+    {"role": "system", "content": "You should use the provided context to answer the question given. Your reply should contain only the correct answer and nothing more."},
     {"role": "user", "content": "Context: Ainhoa Artolazábal Royo( born 6 March 1972) is a road cyclist from Spain. She represented her nation at the 1992 Summer Olympics in the women's road race. Allen Holden( 18 April 1911 – 12 December 1980) was a New Zealand cricketer. He played two first- class matches for Otago between 1937 and 1940. Question: Who was born earlier, Allen Holden or Ainhoa Artolazábal?"},
     {"role": "assistant", "content": "Allen Holden"}
 ]
