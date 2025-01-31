@@ -3,6 +3,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from classes import QCA
 import re
+from random import randint
 import spacy
 nlp = spacy.load('en_core_web_sm')
 import warnings
@@ -54,16 +55,45 @@ def get_responses(data):
     prompt2 = data['prompt_s']
     A2= ' ' + data['gold_s']
 
-    inputs = tokenizer(prompt, return_tensors='pt', return_token_type_ids=False)
-    inputs.to(olmo.device)
-    response = olmo.generate(**inputs, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
+    #remove words in common
+    com = set(A.split()) & set(A2.split())
 
-    inputs2 = tokenizer(prompt2, return_tensors='pt', return_token_type_ids=False)
-    inputs2.to(olmo.device)
-    response2 = olmo.generate(**inputs2, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
+    A_ = ' '.join([word for word in A.split() if word not in com])
+    A2_ = ' '.join([word for word in A2.split() if word not in com])
 
-    output = tokenizer.batch_decode(response, skip_special_tokens=True)[0].split('\n')[0]
-    output2 = tokenizer.batch_decode(response2, skip_special_tokens=True)[0].split('\n')[0]
+    if len(A_) < 1 or len(A2_) < 1:
+        print('not possible due to common answer strings')
+        return A, [], A2, [], 'none' #if one is empty, ie the answer is entirely contained within the other, then this question is not useful to the analysis
+    
+    else:
+        A = A_
+        A2 = A2_
+
+    if randint(0,1) == 0:
+        r = 'orig'
+        inputs = tokenizer(prompt, return_tensors='pt', return_token_type_ids=False)
+        inputs.to(olmo.device)
+        response = olmo.generate(**inputs, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
+
+        inputs2 = tokenizer(prompt2, return_tensors='pt', return_token_type_ids=False)
+        inputs2.to(olmo.device)
+        response2 = olmo.generate(**inputs2, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
+
+        output = tokenizer.batch_decode(response, skip_special_tokens=True)[0].split('\n')[0]
+        output2 = tokenizer.batch_decode(response2, skip_special_tokens=True)[0].split('\n')[0]
+    else:
+        r = 'switched'
+
+        inputs2 = tokenizer(prompt2, return_tensors='pt', return_token_type_ids=False)
+        inputs2.to(olmo.device)
+        response2 = olmo.generate(**inputs2, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
+
+        inputs = tokenizer(prompt, return_tensors='pt', return_token_type_ids=False)
+        inputs.to(olmo.device)
+        response = olmo.generate(**inputs, max_new_tokens=10, do_sample=True, top_k=50, top_p=0.95)
+
+        output = tokenizer.batch_decode(response, skip_special_tokens=True)[0].split('\n')[0]
+        output2 = tokenizer.batch_decode(response2, skip_special_tokens=True)[0].split('\n')[0]
 
     out = re.findall(r'(?<=Answer: ).*', output)
     if len(out)>0:
@@ -107,20 +137,21 @@ def get_responses(data):
     print(f'Output: {out2}\nTrue: {A2}\ngold in output: {gold2_present}, \nwrong in output: {wrong2_present}')
     print('*'*30)
     print()
-    return out,gold_present,wrong_present,out2,gold2_present,wrong2_present
+    return out,gold_present,wrong_present,out2,gold2_present,wrong2_present, r
 
 c=0
 n=10000
 with open(f'{chosen_model}_{n}_counterfactuals.json', 'w') as fp:
     for k, v in prompts.items():
         print(c)
-        out,gold_present,wrong_present,out2,gold2_present,wrong2_present = get_responses(v)
+        out,gold_present,wrong_present,out2,gold2_present,wrong2_present,r = get_responses(v)
         fp.write(json.dumps({k: {'gold_present': gold_present, 
                                  'wrong_present': wrong_present, 
                                  'gold2_present': gold2_present, 
                                  'wrong2_present': wrong2_present,
                                  'out': out,
-                                 'out2':out2}})+ '\n')
+                                 'out2':out2,
+                                 'order': r}})+ '\n')
         c+=1
         if c > n:
             break
