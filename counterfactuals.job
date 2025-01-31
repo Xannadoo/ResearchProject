@@ -7,6 +7,7 @@
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:2
 #SBATCH --nodelist=cn19,cn11,cn13,cn[3,6]
+#SBATCH --mail-type=END
 
 hostname
 

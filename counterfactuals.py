@@ -63,7 +63,7 @@ def get_responses(data):
 
     if len(A_) < 1 or len(A2_) < 1:
         print('not possible due to common answer strings')
-        return A, [], A2, [], 'none' #if one is empty, ie the answer is entirely contained within the other, then this question is not useful to the analysis
+        return A,[],[], A2,[],[],'none' #if one is empty, ie the answer is entirely contained within the other, then this question is not useful to the analysis
     
     else:
         A = A_
