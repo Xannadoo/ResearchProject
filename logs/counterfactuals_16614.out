@@ -1,0 +1,1785 @@
+cn11.hpc.itu.dk
+loading model
+load model internal
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:43<01:27, 43.56s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:44<00:18, 18.70s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:45<00:00, 10.67s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:45<00:00, 15.32s/it]
+model loaded, loading tokeniser
+tokeniser loaded
+model ready for set up
+cuda:0
+chat template applied
+model ready to fly, loading dataset
+dataset loaded
+0
+******************************
+Output: Allen Holden
+True: Allen Holden
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Ainhoa Artolazábal.
+True: Ainhoa Artolazábal
+gold in output: True, 
+wrong in output: False
+******************************
+
+1
+******************************
+Output: Gerd Cintl
+True: Gerd Cintl
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Léa Drucker
+True: Léa Drucker
+gold in output: True, 
+wrong in output: False
+******************************
+
+2
+******************************
+Output: Clark Kerr ( May 17, 1911 – December 1
+True: Clark Kerr
+gold in output: True, 
+wrong in output: False
+******************************
+Output: François Barrer( François Barrier) was born
+True: François Barrer
+gold in output: True, 
+wrong in output: False
+******************************
+
+3
+******************************
+Output: The World's Greatest Athlete
+True: The World's Greatest Athlete
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Invincible (2006) was released last,
+True: Invincible
+gold in output: True, 
+wrong in output: False
+******************************
+
+4
+[]
+[]
+******************************
+Output: []
+True: Yevgeny Primakov Jr.
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Steve Courtin
+gold in output: False, 
+wrong in output: False
+******************************
+
+5
+******************************
+Output: Roxanne Quimby
+True: Roxanne Quimby
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Richard Goodenough Rice
+True: Richard Rice
+gold in output: True, 
+wrong in output: False
+******************************
+
+6
+******************************
+Output: Sir James Clark, 1� 1st Baronet
+True: Sir James Clark, 1St Baronet
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Anthony Peter Khoraish, Patriarch Moran Mor
+True: Anthony Peter Khoraish
+gold in output: True, 
+wrong in output: False
+******************************
+
+7
+[]
+******************************
+Output: []
+True: Reed Bullen
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Otto Lagerfeld
+True: Otto Lagerfeld
+gold in output: True, 
+wrong in output: False
+******************************
+
+8
+******************************
+Output: Arthur Edmund Carewe was born first.
+True: Arthur Edmund Carewe
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Arthur Edmund Carewe.
+True: A. I. Bezzerides
+gold in output: False, 
+wrong in output: True
+******************************
+
+9
+******************************
+Output: Glenn H. James ( April 19, 1890 –
+True: Glenn H. James
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Glenn H. James (April 19, 1890 –
+True: Mike Delany
+gold in output: False, 
+wrong in output: True
+******************************
+
+10
+[]
+******************************
+Output: Samuel Musgrave was born earlier than Capri Caf
+True: Samuel Musgrave
+gold in output: True, 
+wrong in output: True
+******************************
+Output: []
+True: Capri Cafaro
+gold in output: False, 
+wrong in output: False
+******************************
+
+11
+[]
+******************************
+Output: []
+True: Corinne De Vailly
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Corinne De Vailly was born earlier
+True: Derrick Wells
+gold in output: False, 
+wrong in output: True
+******************************
+
+12
+******************************
+Output: Harry R. Harr
+True: Harry R. Harr
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Werner Lüdi
+True: Werner Lüdi
+gold in output: True, 
+wrong in output: False
+******************************
+
+13
+******************************
+Output: Mad, Mad was founded in 1952 by editor Harvey
+True: Mad
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Mad was founded in 1952 while Meatpaper was published
+True: Meatpaper
+gold in output: True, 
+wrong in output: True
+******************************
+
+14
+******************************
+Output: Franck Jurietti.
+True: Franck Jurietti
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Charles 'Pop' Fraser. Charles Alan 'Pop
+True: Charles 'Pop' Fraser
+gold in output: True, 
+wrong in output: False
+******************************
+
+15
+[]
+******************************
+Output: []
+True: Adrian Zaugg
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Michael Treanor was born on April 17, 1979
+True: Michael Treanor
+gold in output: True, 
+wrong in output: False
+******************************
+
+16
+******************************
+Output: Mohan Chand Sharma
+True: Mohan Chand Sharma
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Sofian Chahed ( born 18 April 1983)
+True: Sofian
+gold in output: True, 
+wrong in output: False
+******************************
+
+17
+******************************
+Output: Christian Gottfried Lorsch (September 11, 17
+True: Christian Gottfried Lorsch
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Antonio Muñoz Degrain. 
+True: Antonio Muñoz Degrain
+gold in output: True, 
+wrong in output: False
+******************************
+
+18
+******************************
+Output: Madrugada
+True: Madrugada
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Madrugada
+True: The Fiery Furnaces
+gold in output: False, 
+wrong in output: True
+******************************
+
+19
+[]
+[]
+******************************
+Output: []
+True: Ellen Tronnier
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Georgi Mirtchev
+gold in output: False, 
+wrong in output: False
+******************************
+
+20
+******************************
+Output: Eradu Kanasu
+True: The Black Chapel
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Eradu Kanasu
+True: Eradu Kanasu
+gold in output: True, 
+wrong in output: False
+******************************
+
+21
+******************************
+Output: Rüdiger Haas
+True: Rüdiger Haas
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Rüdiger Haas
+True: Denise Pesántes
+gold in output: False, 
+wrong in output: True
+******************************
+
+22
+******************************
+Output: Daasa (2003)
+True: Daasa
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Rajani Kantha
+True: Rajani Kantha
+gold in output: True, 
+wrong in output: False
+******************************
+
+23
+******************************
+Output: S, Espirmito Ferrari
+True: Sergio Ferrari
+gold in output: True, 
+wrong in output: False
+******************************
+Output: S Sergio Ferrari was born on 17 September 1943
+True: Patrick Kane
+gold in output: False, 
+wrong in output: True
+******************************
+
+24
+******************************
+Output: Francis Lee Friedman.
+True: Francis Lee Friedman
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Alfredo Yantorno. Alfredo Yant
+True: Alfredo Yantorno
+gold in output: True, 
+wrong in output: False
+******************************
+
+25
+******************************
+Output: Samuel Hoar
+True: Samuel Hoar
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Samuel Hoar ( May 18, 1778 –
+True: Bryan Stephens
+gold in output: False, 
+wrong in output: True
+******************************
+
+26
+******************************
+Output: Glamour of Hollywood (later renamed Glam
+True: Glamour
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Glamour was founded last, in 1939.
+True: LaIsha
+gold in output: False, 
+wrong in output: True
+******************************
+
+27
+[]
+******************************
+Output: []
+True: Sercan Görgülü
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Michael Joseph Garzi was born on March 1,
+True: Mike Garzi
+gold in output: True, 
+wrong in output: False
+******************************
+
+28
+[]
+******************************
+Output: Padmanabha Gautam, MVC(
+True: Sheila Tracy
+gold in output: False, 
+wrong in output: True
+******************************
+Output: []
+True: Padmanabha Gautam
+gold in output: False, 
+wrong in output: False
+******************************
+
+29
+******************************
+Output: Geoff Greetham
+True: Geoff Greetham
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Geoff Greetham was born on 5 June 1962
+True: Stefanos Kotsolis
+gold in output: False, 
+wrong in output: True
+******************************
+
+30
+[]
+******************************
+Output: Victor Starffin
+True: Victor Starffin
+gold in output: True, 
+wrong in output: False
+******************************
+Output: []
+True: Jon Condo
+gold in output: False, 
+wrong in output: False
+******************************
+
+31
+******************************
+Output: Katha Pollitt
+True: Katha Pollitt
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Katha Pollitt
+True: Iliyan Mitsanski
+gold in output: False, 
+wrong in output: True
+******************************
+
+32
+******************************
+Output: Elaine Crosby
+True: Elaine Crosby
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Elaine Crosby ( born June 6, 1958)
+True: Hayden Kho
+gold in output: False, 
+wrong in output: True
+******************************
+
+33
+******************************
+Output: The Commandment Of Love
+True: Commandment Of Love
+gold in output: True, 
+wrong in output: False
+******************************
+Output: The Robbers is a 1962 Spanish crime film directed
+True: Robbers (Film
+gold in output: True, 
+wrong in output: False
+******************************
+
+34
+[]
+[]
+******************************
+Output: []
+True: Ariel S. Ballif
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Alexander Radó
+gold in output: False, 
+wrong in output: False
+******************************
+
+35
+******************************
+Output: Gábor Straka is older than Craig He
+True: Gábor Straka
+gold in output: True, 
+wrong in output: True
+******************************
+Output: Gábor Straka ( born December 18,
+True: Craig Heimburger
+gold in output: False, 
+wrong in output: True
+******************************
+
+36
+******************************
+Output: Town Without Pity. The movie Town Without P
+True: Town Without Pity
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Roja Kootam
+True: Roja Kootam
+gold in output: True, 
+wrong in output: False
+******************************
+
+37
+******************************
+Output: Euridice (also Erudice or E
+True: Euridice
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Don Quichotte was last performed. The opera
+True: Don Quichotte
+gold in output: True, 
+wrong in output: False
+******************************
+
+38
+******************************
+Output: Joe Bonello (born 4 April 1961) was
+True: Joe Bonello
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Sergei Vladimirovich Kopn
+True: Sergei Kopnin
+gold in output: True, 
+wrong in output: False
+******************************
+
+39
+******************************
+Output: Getting Mary Married
+True: Getting Mary Married
+gold in output: True, 
+wrong in output: False
+******************************
+Output: La bella di Lodi (1963) was
+True: La
+gold in output: True, 
+wrong in output: False
+******************************
+
+40
+******************************
+Output: Idi Maa Ashokgadi Love Story
+True: 10 Rillington Place
+gold in output: False, 
+wrong in output: True
+******************************
+Output: 10 Rillington Place (1971) was the
+True: Idi Maa Ashokgadi
+gold in output: False, 
+wrong in output: True
+******************************
+
+41
+******************************
+Output: Hyomin ( Park Sun-young; born May
+True: Hyomin
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Brian Fair is younger than Hyomin.
+True: Brian Fair
+gold in output: True, 
+wrong in output: True
+******************************
+
+42
+******************************
+Output: Arkansas State University
+True: Arkansas State
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Arkansas State University (also known as "A-
+True: of Southern Queensland
+gold in output: False, 
+wrong in output: True
+******************************
+
+43
+******************************
+Output: Sa-Re-Ga-Ma-Pa
+True: Tarzan'S Deadly Silence
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Sa-Re-Ga-Ma-Pa
+True: Sa-Re-Ga-Ma-Pa
+gold in output: True, 
+wrong in output: False
+******************************
+
+44
+******************************
+Output: Skinny Puppy. Skinny Pupp
+True: Skinny Puppy
+gold in output: True, 
+wrong in output: False
+******************************
+Output: The Golden Seals.
+True: The Golden Seals
+gold in output: True, 
+wrong in output: False
+******************************
+
+45
+******************************
+Output: Arizona Bushwhackers (1968)
+True: Arizona Bushwhackers
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Arizona Bushwhackers (1968) was released
+True: The Indians Are Still Far Away
+gold in output: False, 
+wrong in output: True
+******************************
+
+46
+******************************
+Output: Paul Coffey
+True: Derek Ford
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Paul Coffey
+True: Paul Coffey
+gold in output: True, 
+wrong in output: False
+******************************
+
+47
+******************************
+Output: Anthony Van Hoboken (23 March 1887) was
+True: Anthony Van Hoboken
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Sue Mcleish was born on August 18,
+True: Sue Mcleish
+gold in output: True, 
+wrong in output: False
+******************************
+
+48
+******************************
+Output: G. Tyler Miller ( July 25, 1902 –
+True: G. Tyler Miller
+gold in output: True, 
+wrong in output: False
+******************************
+Output: G. Tyler Miller.
+True: Djiguible Traoré
+gold in output: False, 
+wrong in output: True
+******************************
+
+49
+[]
+******************************
+Output: []
+True: Al Zimbalist
+gold in output: False, 
+wrong in output: False
+******************************
+Output: William T. Piper Jr. was born on
+True: William T. Piper Jr.
+gold in output: True, 
+wrong in output: False
+******************************
+
+50
+******************************
+Output: A Thorn In The Heart. A Thorn In The
+True: A Thorn In The Heart
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Aquarius (Film)
+True: Aquarius (Film
+gold in output: True, 
+wrong in output: True
+******************************
+
+51
+******************************
+Output: Hernando Casanova ( 21 April 1945 ) was
+True: Hernando Casanova
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Antri Christoforou.
+True: Antri Christoforou
+gold in output: True, 
+wrong in output: False
+******************************
+
+52
+******************************
+Output: Better Than Ezra. Better Than Ezra is
+True: Better Than Ezra
+gold in output: True, 
+wrong in output: False
+******************************
+Output: The Breeders. The Breeders are
+True: The Breeders
+gold in output: True, 
+wrong in output: False
+******************************
+
+53
+[]
+******************************
+Output: Man'S Castle (1933) was released first
+True: Man'S Castle
+gold in output: True, 
+wrong in output: False
+******************************
+Output: []
+True: Carry On Henry
+gold in output: False, 
+wrong in output: False
+******************************
+
+54
+******************************
+Output: Karl Ewald Hasse
+True: Karl Ewald Hasse
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Karl Ewald Hasse
+True: John Bryce Mcleod
+gold in output: False, 
+wrong in output: True
+******************************
+
+55
+******************************
+Output: Joy Scouts
+True: Joy Scouts
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Nothing Like the Holidays
+True: Holidays
+gold in output: True, 
+wrong in output: False
+******************************
+
+56
+[]
+******************************
+Output: Edmund Law
+True: Edmund Law
+gold in output: True, 
+wrong in output: False
+******************************
+Output: []
+True: Bernard Of Italy
+gold in output: False, 
+wrong in output: False
+******************************
+
+57
+******************************
+Output: Yi Tjoune
+True: Yi Tjoune
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Yi Tjoune
+True: James Gibson Lorimer
+gold in output: False, 
+wrong in output: True
+******************************
+
+58
+******************************
+Output: Cao Yu.
+True: Cao Yu
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Cao Yu.
+True: Bratislav Anastasijević
+gold in output: False, 
+wrong in output: True
+******************************
+
+59
+******************************
+Output: Barrie Vagg ( 21 January 1943) was
+True: Barrie Vagg
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Barrie Vagg ( born 21 January 1943 )
+True: David Normington
+gold in output: False, 
+wrong in output: True
+******************************
+
+60
+[]
+[]
+******************************
+Output: []
+True: Jackie Saunders
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Zhanna Nemtsova
+gold in output: False, 
+wrong in output: False
+******************************
+
+61
+[]
+******************************
+Output: []
+True: Lorenzo Chiesa
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Dorothy Buxton, Dorothy Frances Buxton( n
+True: Dorothy Buxton
+gold in output: True, 
+wrong in output: False
+******************************
+
+62
+******************************
+Output: John Alexander McCreery
+True: John Alexander Mccreery
+gold in output: True, 
+wrong in output: False
+******************************
+Output: John Alexander Mccreery was born earlier than
+True: Brayan Peña
+gold in output: False, 
+wrong in output: True
+******************************
+
+63
+[]
+******************************
+Output: []
+True: Harald Leipnitz
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Adeline Robinson.
+True: Adeline Robinson
+gold in output: True, 
+wrong in output: False
+******************************
+
+64
+******************************
+Output: Robert Sterling Clark.
+True: Robert Sterling Clark
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Robert Sterling Clark.
+True: Erich Lüth
+gold in output: False, 
+wrong in output: True
+******************************
+
+65
+******************************
+Output: Ousmane Viera Diarrassou
+True: Manjul Bhargava
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Manjul Bhargava ( born 8 August
+True: Ousmane Viera
+gold in output: False, 
+wrong in output: True
+******************************
+
+66
+[]
+******************************
+Output: []
+True: Knut Haus
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Knut Haus ( 23 June 1906 ) was born
+True: Marques Houtman
+gold in output: False, 
+wrong in output: True
+******************************
+
+67
+******************************
+Output: Johnny Stanley ( 26 November 1905 )
+True: Johnny Stanley
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Killian Cosgrove ( 25 April 1987)
+True: Killian Cosgrove
+gold in output: True, 
+wrong in output: False
+******************************
+
+68
+******************************
+Output: Girivalam
+True: Girivalam
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Girivalam. Girivalam, a 2005
+True: Viyabari
+gold in output: False, 
+wrong in output: True
+******************************
+
+69
+******************************
+Output: Teoliga Fakailoga ( born 12
+True: Teoliga Fakailoga
+gold in output: True, 
+wrong in output: False
+******************************
+Output: José María Romero de Tejada
+True: José María Romero de Tejada
+gold in output: True, 
+wrong in output: False
+******************************
+
+70
+******************************
+Output: Terry Of The Times
+True: Terry Of
+gold in output: True, 
+wrong in output: False
+******************************
+Output: The Man From Saturday
+True: or Man From
+gold in output: True, 
+wrong in output: False
+******************************
+
+71
+******************************
+Output: Cool Runnings
+True: Cool Runnings
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Cool Runnings (released October 1, 1993
+True: Max Keeble's
+gold in output: False, 
+wrong in output: True
+******************************
+
+72
+******************************
+Output: Kym Crosby
+True: Kym Crosby
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Pat "Richard Patrick Gerald" Rodriguez was born earlier
+True: Pat Rodriguez
+gold in output: True, 
+wrong in output: False
+******************************
+
+73
+******************************
+Output: Zheng Jie
+True: Zheng Jie
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Garbiñe Muguruza (8 October
+True: Garbiñe Muguruza
+gold in output: True, 
+wrong in output: False
+******************************
+
+74
+******************************
+Output: Fred Claus. Fred Claus is a 2007 American fantasy
+True: Fred Claus
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Fred Claus. Fred Claus was released on November 9
+True: Paa
+gold in output: False, 
+wrong in output: True
+******************************
+
+75
+******************************
+Output: Herb Hudson
+True: Herb Hudson
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Herb Hudson was born before Taiwo Hassan.
+True: Taiwo Hassan
+gold in output: True, 
+wrong in output: True
+******************************
+
+76
+******************************
+Output: Joseph Seligman was born earlier than Brad T
+True: Joseph Seligman
+gold in output: True, 
+wrong in output: True
+******************************
+Output: Brad Treliving
+True: Brad Treliving
+gold in output: True, 
+wrong in output: False
+******************************
+
+77
+******************************
+Output: The Yakuza
+True: The Yakuza
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Furia (Film)
+True: Furia
+gold in output: True, 
+wrong in output: False
+******************************
+
+78
+******************************
+Output: Johann Jakob von Tschudi was born first
+True: Johann Jakob Von Tschudi
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Johann Jakob von Tschudi was born earlier
+True: Vladimír Mathern
+gold in output: False, 
+wrong in output: True
+******************************
+
+79
+[]
+******************************
+Output: Filippo Simeoni ( August 17,
+True: Burhanuddin Abdullah
+gold in output: False, 
+wrong in output: True
+******************************
+Output: []
+True: Filippo Simeoni
+gold in output: False, 
+wrong in output: False
+******************************
+
+80
+******************************
+Output: Nikolay Savin
+True: Nikolay Savin
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Nikolay Savin
+True: Aja Evans
+gold in output: False, 
+wrong in output: True
+******************************
+
+81
+******************************
+Output: The Tango Star
+True: The Tango Star
+gold in output: True, 
+wrong in output: False
+******************************
+Output: The Tango Star was released last. It was
+True: Poonji
+gold in output: False, 
+wrong in output: True
+******************************
+
+82
+[]
+[]
+******************************
+Output: []
+True: Dalmacio Langarica
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Andrzej Krzycki
+gold in output: False, 
+wrong in output: False
+******************************
+
+83
+******************************
+Output: Busby Berkeley was born first on November 29,
+True: Busby Berkeley
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Busby Berkeley.
+True: Billy Bob Thornton
+gold in output: False, 
+wrong in output: True
+******************************
+
+84
+******************************
+Output: Alvah Crocker (businessperson) was
+True: Alvah Crocker
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Alvah Crocker (Ugggh,
+True: Stephen Levine
+gold in output: False, 
+wrong in output: True
+******************************
+
+85
+[]
+******************************
+Output: []
+True: Johann-Heinrich Eckhardt
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Edwin Hammond. They both died on the same day
+True: Edwin Hammond
+gold in output: True, 
+wrong in output: False
+******************************
+
+86
+******************************
+Output: Chevelle
+True: Chevelle
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Chevelle
+True: Miles Kane
+gold in output: False, 
+wrong in output: True
+******************************
+
+87
+******************************
+Output: Farhad Rahbar ( born 5 October 1959 in
+True: Youssef Naciri
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Farhad Rahbar ( born 5 October 1959 in
+True: Farhad Rahbar
+gold in output: True, 
+wrong in output: False
+******************************
+
+88
+******************************
+Output: Feargus Urquhart ( born April 19,
+True: Feargus Urquhart
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Simonas Stanevičius. Simonas
+True: Simonas Stanevičius
+gold in output: True, 
+wrong in output: False
+******************************
+
+89
+******************************
+Output: Perri
+True: Perri
+gold in output: True, 
+wrong in output: False
+******************************
+Output: The BFG was released later in 2016, as
+True: BFG
+gold in output: True, 
+wrong in output: False
+******************************
+
+90
+******************************
+Output: Ángel Malvicino ( 20 May 1921
+True: Ángel Malvicino
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Rachel Anne Sutherland
+True: Rachel Sutherland
+gold in output: True, 
+wrong in output: False
+******************************
+
+91
+[]
+******************************
+Output: []
+True: Wilhelm Bladin
+gold in output: False, 
+wrong in output: False
+******************************
+Output: João Eduardo Pinto de Loureiro
+True: João Loureiro
+gold in output: True, 
+wrong in output: False
+******************************
+
+92
+[]
+[]
+******************************
+Output: []
+True: Charles E. Ford
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Eberto Escobedo Lazo
+gold in output: False, 
+wrong in output: False
+******************************
+
+93
+[]
+******************************
+Output: Claude Rolin ( born 26 May 1957) is
+True: Claude Rolin
+gold in output: True, 
+wrong in output: False
+******************************
+Output: []
+True: Vinnie Chas
+gold in output: False, 
+wrong in output: False
+******************************
+
+94
+******************************
+Output: Hartmut Welker
+True: Hartmut Welker
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Hartmut Welker.
+True: Andrei Boroștean
+gold in output: False, 
+wrong in output: True
+******************************
+
+95
+[]
+******************************
+Output: []
+True: Robert Henry Newell
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Alistair Harrison was born last.
+True: Alistair Harrison
+gold in output: True, 
+wrong in output: False
+******************************
+
+96
+******************************
+Output: Isaac Rochell ( born April 22, 1995)
+True: Isaac Rochell
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Olivier Py (born 24 July 1965 in Gr
+True: Olivier Py
+gold in output: True, 
+wrong in output: False
+******************************
+
+97
+[]
+[]
+******************************
+Output: []
+True: George Faison
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Clint Oldenburg
+gold in output: False, 
+wrong in output: False
+******************************
+
+98
+******************************
+Output: TEG
+True: TEG
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Diamond  (Inspired by the game K
+True: Diamond
+gold in output: True, 
+wrong in output: False
+******************************
+
+99
+******************************
+Output: Trevor Bardette was younger than David Monies.
+True: Trevor Bardette
+gold in output: True, 
+wrong in output: True
+******************************
+Output: David Monies ( June 3, 1812 –
+True: David Monies
+gold in output: True, 
+wrong in output: False
+******************************
+
+100
+******************************
+Output: Madre Alegría
+True: Madre Alegría
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Armor Hero Captor King ( Armor Hero
+True: Hero Captor King
+gold in output: True, 
+wrong in output: False
+******************************
+
+101
+******************************
+Output: Chen Qingying is the older individual, having been
+True: Chen Qingying
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Per August Leonard Hallström ( 29 September 1866 –
+True: Per Hallström
+gold in output: True, 
+wrong in output: False
+******************************
+
+102
+[]
+******************************
+Output: If You Want Some was released more recently, but
+True: If You Want Some
+gold in output: True, 
+wrong in output: False
+******************************
+Output: []
+True: The Ketchup Song (Aserejé
+gold in output: False, 
+wrong in output: False
+******************************
+
+103
+******************************
+Output: Frederick Dundas
+True: Frederick Dundas
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Frederick Dundas. His date of death was
+True: John Grayson
+gold in output: False, 
+wrong in output: True
+******************************
+
+104
+******************************
+Output: Remo Marco Freuler
+True: Mamdouh Abdelrehim
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Remo Marco Freuler.
+True: Remo Freuler
+gold in output: True, 
+wrong in output: False
+******************************
+
+105
+******************************
+Output: Sun Yuanliang, Sun Yuanliang was
+True: Bud Collyer
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Sun Yuanliang ( May 25, 2007)
+True: Sun Yuanliang
+gold in output: True, 
+wrong in output: False
+******************************
+
+106
+******************************
+Output: Madan Mehra
+True: Madan Mehra
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Joseph C. Taphorn
+True: Joseph C. Taphorn
+gold in output: True, 
+wrong in output: False
+******************************
+
+107
+******************************
+Output: Motor Trend
+True: Motor Trend
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Motor Trend
+True: National Lampoon
+gold in output: False, 
+wrong in output: True
+******************************
+
+108
+[]
+******************************
+Output: []
+True: Richard Gasquet
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Henri Kontinen was born before Richard Gasquet
+True: Henri Kontinen
+gold in output: True, 
+wrong in output: True
+******************************
+
+109
+[]
+******************************
+Output: []
+True: Fort Saganne
+gold in output: False, 
+wrong in output: False
+******************************
+Output: Fort Saganne, a 1984 French war film
+True: Vaseegara
+gold in output: False, 
+wrong in output: True
+******************************
+
+110
+******************************
+Output: Moster Fra Mols
+True: Moster Fra Mols
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Angel on the Amazon
+True: Angel On The Amazon
+gold in output: True, 
+wrong in output: False
+******************************
+
+111
+******************************
+Output: Brendan Behan
+True: Brendan Behan
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Brendan Francis Aidan Behan was born early
+True: Alline Calandrini
+gold in output: False, 
+wrong in output: True
+******************************
+
+112
+******************************
+Output: Trevor Frischmon was born earlier.
+True: Luc Bondy
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Trevor Frischmon ( born August 5, 1981
+True: Trevor Frischmon
+gold in output: True, 
+wrong in output: False
+******************************
+
+113
+******************************
+Output: Grande Reportagem was first, coming out between 1984
+True: Grande Reportagem
+gold in output: True, 
+wrong in output: False
+******************************
+Output: The Journal of Life Sciences was the news magazine that
+True: The Journal Of Life Sciences
+gold in output: True, 
+wrong in output: False
+******************************
+
+114
+******************************
+Output: Nicolò Carandini
+True: Nicolò Carandini
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Nicolò Carandini (6 December 1896 –
+True: Grant Hardie
+gold in output: False, 
+wrong in output: True
+******************************
+
+115
+******************************
+Output: Aleksandrs Antonezenko (born June
+True: Aleksandrs Antoņenko
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Lewis Jones (footballer) is younger than Ale
+True: Lewis Jones
+gold in output: True, 
+wrong in output: False
+******************************
+
+116
+******************************
+Output: Enver Adrović
+True: Enver Adrović
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Enver Adrović
+True: Stéphan Rizon
+gold in output: False, 
+wrong in output: True
+******************************
+
+117
+[]
+******************************
+Output: Elias Sunde was not born first. The
+True: Elias Sunde
+gold in output: True, 
+wrong in output: False
+******************************
+Output: []
+True: Karim Saddam
+gold in output: False, 
+wrong in output: False
+******************************
+
+118
+******************************
+Output: Raja Manthiri (2016)
+True: Raja Manthiri
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Pottu Amman (Film)
+True: Pottu Amman
+gold in output: True, 
+wrong in output: False
+******************************
+
+119
+******************************
+Output: Young Husbands
+True: Young Husbands
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Young Husbands
+True: Kottonmouth Kings
+gold in output: False, 
+wrong in output: True
+******************************
+
+120
+******************************
+Output: Janaki Devi Bajaj
+True: Janaki Devi Bajaj
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Janaki Devi Bajaj
+True: Thomas Glavinic
+gold in output: False, 
+wrong in output: True
+******************************
+
+121
+******************************
+Output: Pinne E Arpioni
+True: Pinne E Arpioni
+gold in output: True, 
+wrong in output: False
+******************************
+Output: My Friend from Faro
+True: Faro
+gold in output: True, 
+wrong in output: False
+******************************
+
+122
+******************************
+Output: Simon Joyce
+True: Simon Joyce
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Isabelle Antena (born May 28,
+True: Isabelle Antena
+gold in output: True, 
+wrong in output: False
+******************************
+
+123
+******************************
+Output: Karl Knaths
+True: Karl Knaths
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Barbara Cason (November 15, 1928 – June
+True: Barbara Cason
+gold in output: True, 
+wrong in output: False
+******************************
+
+124
+******************************
+Output: Amy Yuratovac (born December 7
+True: Amy Yuratovac
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Gene Nelson (Baseball) is older.
+True: Gene Nelson
+gold in output: True, 
+wrong in output: False
+******************************
+
+125
+******************************
+Output: Arash Miresmaeili
+True: Arash Miresmaeili
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Arash Miresmaeili
+True: Daniela Torrealba
+gold in output: False, 
+wrong in output: True
+******************************
+
+126
+******************************
+Output: Dual Alibi
+True: Dual Alibi
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Countess Dora.
+True: Countess Dora
+gold in output: True, 
+wrong in output: False
+******************************
+
+127
+******************************
+Output: Steve Bolton (entrepreneur) was born later
+True: Slobodan Kaličanin
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Slobodan Kaličanin (
+True: Steve Bolton
+gold in output: False, 
+wrong in output: True
+******************************
+
+128
+******************************
+Output: Elmore Leonard was born first.
+True: Nadine Gordimer
+gold in output: False, 
+wrong in output: True
+******************************
+Output: Nadine Gordimer was born earlier than El
+True: Elmore Leonard
+gold in output: False, 
+wrong in output: True
+******************************
+
+129
+******************************
+Output: Sabine Jahn.
+True: Sabine Jahn
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Anson W. Pope
+True: Anson W. Pope
+gold in output: True, 
+wrong in output: False
+******************************
+
+130
+******************************
+Output: Zimmedaaar
+True: Zimmedaaar
+gold in output: True, 
+wrong in output: False
+******************************
+Output: Citizen
+True: Citizen (Film
+gold in output: True, 
+wrong in output: False
+******************************
+
+131
+******************************
+Output: John G. Lorber ( born December 25,
+True: Gunnar Sträng
+gold in output: False, 
+wrong in output: True
+******************************
+Output: John G. Lorber ( born December 25,
+True: John G. Lorber
+gold in output: True, 
+wrong in output: False
+******************************
+
+132
+[]
+[]
+******************************
+Output: []
+True: Charlotte Riddell
+gold in output: False, 
+wrong in output: False
+******************************
+Output: []
+True: Lalit Gupta
+gold in output: False, 
+wrong in output: False
+******************************
+
+133
+not possible due to common answer strings
+Traceback (most recent call last):
+  File "/home/ccor/ResearchProject/counterfactuals.py", line 147, in <module>
+    out,gold_present,wrong_present,out2,gold2_present,wrong2_present,r = get_responses(v)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 7, got 5)

@@ -3,15 +3,16 @@
 #SBATCH --output=ResearchProject/logs/%x_%j.out
 #SBATCH --time=12:00:00
 #SBATCH --partition=scavenge
-#SBATCH --cpus-per-task=16
+#SBATCH --cpus-per-task=32
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:2
 #SBATCH --nodelist=cn19,cn11,cn13,cn[3,6]
 #SBATCH --mail-type=END
-
+nvidia-smi --query-gpu=gpu_name,pstate,timestamp,utilization.gpu,utilization.memory,memory.total,memory.used --format=csv -l 1 -f nvidia-smi.log &
 hostname
 
 module load Anaconda3
+module load CUDA
 
 eval "$(conda shell.bash hook)"
 
@@ -19,4 +20,4 @@ conda activate counter
 
 cd ResearchProject
 
-time python3 intgrads.py
+torchrun --nproc_per_node=3 intgrads.py

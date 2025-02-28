@@ -16,7 +16,7 @@ torch.manual_seed(23)
 
 def load_model(model_name):
     print('load model internal')
-    model = AutoModelForCausalLM.from_pretrained(model_name)
+    model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
     model.to('cuda')
     print('model loaded, loading tokeniser')
     tokenizer = AutoTokenizer.from_pretrained(model_name)
