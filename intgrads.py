@@ -1,7 +1,6 @@
 import json
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from helpers import plot_seq_attr
 from captum.attr import LayerIntegratedGradients, LLMGradientAttribution, TextTokenInput
 
 import spacy
@@ -23,7 +22,7 @@ def load_model(model_name):
     print('tokeniser loaded')
     return model, tokenizer
 
-chosen_model = 'large' #'small'or'large'
+chosen_model = 'small' #'small'or'large'
 
 if chosen_model == 'small':
     model = "allenai/OLMo-1B-hf" #little model, runs on laptop
@@ -62,7 +61,7 @@ lig = LayerIntegratedGradients(olmo, olmo.model.embed_tokens)
 llm_attr = LLMGradientAttribution(lig, tokenizer)
 
 c=1
-n=100
+n=10000
 with open(f'{chosen_model}_{n}_intgrads.json', 'w') as fp:
     for k, v in p.items():
         Q = v['prompt_o']
