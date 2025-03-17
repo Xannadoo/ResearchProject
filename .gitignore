@@ -1,5 +1,7 @@
 logs/*
 old/*
+data/extracted_questions.jsonl
+data/outputs/small_10000_intgrads.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
