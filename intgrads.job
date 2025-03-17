@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=intgrads
+#SBATCH --job-name=intgrads_small
 #SBATCH --output=ResearchProject/logs/%x_%j.out
 #SBATCH --time=12:00:00
 #SBATCH --partition=scavenge
@@ -18,6 +18,6 @@ eval "$(conda shell.bash hook)"
 
 conda activate counter 
 
-cd ResearchProject
+cd ResearchProject/scripts
 
-torchrun --nproc_per_node=3 intgrads.py
+python3 intgrads.py

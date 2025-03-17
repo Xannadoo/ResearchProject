@@ -17,6 +17,6 @@ eval "$(conda shell.bash hook)"
 
 conda activate counter 
 
-cd ResearchProject
+cd ResearchProject/scripts
 
 python3 counterfactuals.py
