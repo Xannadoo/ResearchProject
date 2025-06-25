@@ -1,1 +1,3 @@
-# ResearchProject
+# Investigating Comparison Reasoning Skills in a Large Language Model
+
+This study investigates the comparison reasoning capabilities of a large language model (LLM), specifically OLMo_7B_0724_Instruct, by evaluating its responses to counterfactual comparison questions, and comparing saliency scores across tokens that the model should, and shouldn’t find important, following the work of Ray Choudhury et al. (2022). Our results indicate that the model frequently fails to answer both counterfactual questions correctly, suggesting a reliance on heuristics, rather than the expected reasoning skill. The saliency analysis shows that the model often does not consider the same tokens important as a human would. These findings indicate that this method of investigating reasoning abilities has some limitations, but the model likely relies on shortcuts rather than human-type reasoning.
